@@ -16,6 +16,23 @@ section {
 
 .index {
   background-color: $home-background;
+position: relative;
+border-bottom-left-radius: 23%;
+
+  &::after {
+      content: "";
+    background-image: url("../../images/circles-bg.svg");
+    background-size: 80em;
+    background-position: -20em -13em;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 header {
@@ -23,6 +40,7 @@ header {
   justify-content: space-between;
   align-items: center;
   position: relative;
+  z-index: 5;
 
   i {
     color: $logo-white;
@@ -39,12 +57,12 @@ header {
   }
 }
 
-.hide-nav-tray{
-    top: -90vh;
+.hide-nav-tray {
+  top: -90vh;
 }
 
-.show-nav-tray{
-    top: 15vh;
+.show-nav-tray {
+  top: 15vh;
 }
 
 .toggle-menu-controls-show {
