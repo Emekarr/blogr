@@ -1,0 +1,46 @@
+@import "./partials/colors";
+@import "./partials/sizes";
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+}
+
+.index {
+  background-color: $home-background;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $header-padding;
+
+  i {
+    color: $logo-white;
+  }
+  
+}
+
+.toggle-menu-controls-show {
+  display: inline-block !important;
+}
+
+.toggle-menu-controls-hide {
+  display: none !important;
+}
+
+
+.logo {
+  color: $logo-white;
+  font-size: $logo-size;
+  font-weight: $logo-weigth;
+}

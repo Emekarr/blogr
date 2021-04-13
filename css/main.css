@@ -1,1 +1,49 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+body {
+  margin: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+}
+
+.index {
+  background-color: #ff545d;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2em 1.5em 0 1.5em;
+}
+
+header i {
+  color: #fff;
+}
+
+.toggle-menu-controls-show {
+  display: inline-block !important;
+}
+
+.toggle-menu-controls-hide {
+  display: none !important;
+}
+
+.logo {
+  color: #fff;
+  font-size: 2.3em;
+  font-weight: 900;
+}
+/*# sourceMappingURL=main.css.map */
