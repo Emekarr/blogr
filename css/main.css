@@ -26,11 +26,30 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 2em 1.5em 0 1.5em;
+  position: relative;
 }
 
 header i {
   color: #fff;
+  padding: 1em 1em 0 0;
+}
+
+header nav {
+  position: absolute;
+  background-color: #fff;
+  width: 90%;
+  margin-left: 5%;
+  height: 80vh;
+  -webkit-transition: 0.6s ease-in-out;
+  transition: 0.6s ease-in-out;
+}
+
+.hide-nav-tray {
+  top: -90vh;
+}
+
+.show-nav-tray {
+  top: 15vh;
 }
 
 .toggle-menu-controls-show {
@@ -45,5 +64,6 @@ header i {
   color: #fff;
   font-size: 2.3em;
   font-weight: 900;
+  padding: 1em 0 0 1em;
 }
 /*# sourceMappingURL=main.css.map */

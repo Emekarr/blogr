@@ -22,12 +22,29 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: $header-padding;
+  position: relative;
 
   i {
     color: $logo-white;
+    padding: 1em 1em 0 0;
   }
-  
+
+  nav {
+    position: absolute;
+    background-color: $logo-white;
+    width: 90%;
+    margin-left: 5%;
+    height: 80vh;
+    transition: $transition-time;
+  }
+}
+
+.hide-nav-tray{
+    top: -90vh;
+}
+
+.show-nav-tray{
+    top: 15vh;
 }
 
 .toggle-menu-controls-show {
@@ -38,9 +55,9 @@ header {
   display: none !important;
 }
 
-
 .logo {
   color: $logo-white;
   font-size: $logo-size;
   font-weight: $logo-weigth;
+  padding: 1em 0 0 1em;
 }
