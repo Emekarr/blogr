@@ -1,5 +1,11 @@
 @import "./partials/colors";
 @import "./partials/sizes";
+@import "./partials/flex_mixins";
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 
 body {
   margin: 0;
@@ -7,6 +13,8 @@ body {
 
 * {
   box-sizing: border-box;
+  text-decoration: none;
+  color: white;
 }
 
 section {
@@ -16,14 +24,16 @@ section {
 
 .index {
   background-color: $home-background;
-position: relative;
-border-bottom-left-radius: 23%;
+  position: relative;
+  border-bottom-left-radius: 7em;
+  height: 90vh;
+  overflow: hidden;
 
   &::after {
-      content: "";
+    content: "";
     background-image: url("../../images/circles-bg.svg");
     background-size: 80em;
-    background-position: -20em -13em;
+    background-position: -20em -16em;
     background-repeat: no-repeat;
     opacity: 0.4;
     z-index: 2;
@@ -32,13 +42,54 @@ border-bottom-left-radius: 23%;
     left: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+  }
+
+  .main {
+    @include flex();
+    height: 80%;
+
+    & p {
+      text-align: center;
+      z-index: 3;
+    }
+
+    & p:first-child {
+      font-size: 2.3em;
+      font-weight: 900;
+    }
+
+    & p:first-child + p {
+      font-size: 1.3em;
+      font-weight: 100;
+    }
+
+    .more-buttons {
+      @include flex(row, space-between);
+      width: 80%;
+      z-index: 3;
+      font-weight: 900;
+
+      @mixin  padding-radius {
+        padding: 1em 2em;
+        border-radius: 10em;
+      }
+
+      .start-free {
+          @include padding-radius();
+        background-color: white;
+        color: $home-background;
+      }
+      .learn-more {
+        @include padding-radius();
+        border: 0.01em solid white;
+      }
+    }
   }
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex(row, space-between);
   position: relative;
   z-index: 5;
 
@@ -47,14 +98,84 @@ header {
     padding: 1em 1em 0 0;
   }
 
-  nav {
+  .nav-tray {
     position: absolute;
     background-color: $logo-white;
     width: 90%;
     margin-left: 5%;
-    height: 80vh;
+    height: 65vh;
     transition: $transition-time;
+    box-shadow: $shadow;
+    @include flex(column, space-between);
+    padding: 1em 0;
+    font-size: 2vh;
+
+    .nav-items {
+      width: 100%;
+      padding: 0;
+      margin-top: -0.6em;
+      height: 68%;
+      @include flex();
+
+      .nav-item {
+        width: 100%;
+        list-style-type: none;
+
+        .item > p {
+          color: black;
+          text-align: center;
+          font-weight: 900;
+          overflow-y: hidden;
+        }
+
+        .more-options {
+          background-color: rgb(230, 228, 228);
+          border-radius: 0.5em;
+          margin: 0 1em;
+          @include flex(column, space-around);
+          overflow-y: hidden;
+          transition: $transition-time;
+          p {
+            color: rgb(54, 54, 54);
+          }
+        }
+      }
+    }
+
+    .auth {
+      width: 100%;
+      height: 32%;
+      @include flex(column, flex-start);
+      hr {
+        width: 80%;
+      }
+
+      > p {
+        font-weight: 700;
+        color: black;
+      }
+
+      .sign-up-button {
+        background-color: $home-background;
+        width: 10em;
+        height: 4em;
+        padding: 0 1em;
+        border-radius: 3em;
+        display: inline-block;
+        font-weight: 700;
+        @include flex(row);
+      }
+    }
   }
+}
+
+.hide-more-options {
+  height: 0;
+}
+
+.show-more-options {
+  margin: 1em;
+  height: 20vh;
 }
 
 .hide-nav-tray {
